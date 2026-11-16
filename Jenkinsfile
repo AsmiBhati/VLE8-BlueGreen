@@ -49,7 +49,7 @@ pipeline {
         stage('Deploy Green') {
             steps {
                 withCredentials([sshUserPrivateKey(
-                    credentialsId: 'ec2-ssh-key',
+                    credentialsId: 'ec2-ssh-key-vle8',
                     keyFileVariable: 'SSH_KEY',
                     usernameVariable: 'SSH_USER'
                 )]) {
@@ -80,7 +80,7 @@ pipeline {
         stage('Switch Traffic to Green') {
             steps {
                 withCredentials([sshUserPrivateKey(
-                    credentialsId: 'ec2-ssh-key',
+                    credentialsId: 'ec2-ssh-key-vle8',
                     keyFileVariable: 'SSH_KEY',
                     usernameVariable: 'SSH_USER'
                 )]) {
